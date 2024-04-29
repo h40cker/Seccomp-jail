@@ -1,0 +1,22 @@
+# Rule 1: Allow read syscall
+allow read
+deny
+
+# Rule 2: Allow read and write syscalls
+allow read
+allow write
+deny
+
+# Rule 3: Deny kill and ptrace syscalls
+kill
+ptrace
+deny
+
+# Rule 4: Deny execve syscall for specific PID
+12345 deny execve
+
+# Rule 5: Allow read and write syscalls for specific PID
+54321 allow
+54321 allow read
+54321 allow write
+54321 deny
